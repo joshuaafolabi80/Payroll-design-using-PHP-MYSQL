@@ -1,0 +1,536 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+.err{
+	background: rgba(255, 10 , 25, 0.6);
+	padding: 5px;
+	text-align: center;
+	margin: 0.5em;
+	border-radius: 25px;
+}
+
+.suc{
+	background: rgba(10, 255 , 25, 0.6);
+	padding: 5px;
+	text-align: center;
+	margin: 0.5em;
+	border-radius: 25px;
+}
+
+body{
+	background: #eee;
+	padding-bottom: 10%;
+}
+
+.main{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+}
+
+.form-container{
+	width: 30%;
+	padding: 20px;
+	background: #fff;
+	border-radius: 8px;
+	box-shadow: 0 0 25px 1px rgba(0,0,0,0.4);
+}
+
+.indexform{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.indexform div{
+	width: 100%;
+	margin-bottom: 1em;
+}
+
+.indexform div:last-child, .indexform div:first-child{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+.indexform div aside{
+	width: 100px;
+	height: 100px;
+	border-radius: 100%;
+	border: 1px solid black;
+}
+
+label{
+	margin-bottom: 1rem;
+}
+
+input{
+	width: 100%;
+	padding: 10px 0;
+}
+
+button{
+	padding: 1.5em 1.75rem;
+	border: 0;
+	border-radius: 5px;
+	color: #fff;
+	background: #059;
+	cursor: pointer;
+}
+.payrolbody{
+	background: #fff;
+}
+.payrolmain{
+	width: 100%;
+}
+.left-container{
+	width: 20%;
+	height: 100vh;
+	position: fixed;
+	background-color: #059;
+	left: 0;
+	overflow-y: scroll;
+}
+.logo{
+	text-align: center;
+	padding: 0.5rem 0;
+	width: 100%;
+	height: 16vh;
+	background-color: #fff;
+}
+.logo h4{
+	font-size: 40px;
+	color: #059;
+}
+
+.logo h6{
+	font-size: 20px;
+	color: black;
+}
+.logo h1{
+	font-size: 30px;
+	color: #059;
+}
+.side-info{
+	width: 100%;
+	height: 10vh;
+}
+.admin-avatar{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: .75rem;
+}
+.avatar{
+	width: 50px;
+	height: 50px;
+	border: 1px solid white;
+	border-radius: 100%;
+}
+
+.avatar img{
+	width: 100%;
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+}
+.avatar-details{
+	color: white;
+	font-size: 20px;
+}
+.nav-links a{
+	color: white;
+}
+.nav-links ul li{
+	padding: 2px 10px;
+}
+.nav-links ul li{
+	display: block;
+	align-items: center;
+}
+.nav-links ul li a{
+	text-decoration: none;
+	/*color: #f3f;*/
+	font-family: 'arial', sans-serif;
+	font-size: 15px;
+	padding: 10px 30px;
+	transition: 0.6s ease-in-out;
+}
+.nav-links ul li a:hover{
+	color: #7779ac;
+}
+.right-container{
+	width: 80%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	margin-left: calc(100% - 80%);
+}
+.top-nav{
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0 0 5px 0 rgba(0,0,0,0.1);
+}
+.top-nav-right{
+	padding-top: 2rem;
+	padding-left: 2rem;
+	padding-bottom: 2rem;
+}
+.navigation{
+	display: flex;
+	justify-content: flex-end;
+}
+.navigation ul{
+	padding: 0px 0px;
+}
+.navigation ul li{
+	display: inline;
+}
+.navigation ul li a{
+	text-decoration: none;
+	color: #f3f;
+	font-family: 'arial', sans-serif;
+	font-size: 15px;
+	padding: 10px;
+	transition: 0.6s ease-in-out;
+}
+.navigation ul li a:hover{
+	color: #7779ac;
+}
+.button{
+	border: 5px 4px;
+	padding: 5px 13px;
+	border-radius: 10px;
+	cursor: pointer;
+	background: orange;
+	transition: .3s ease-in-out;
+}
+.button:hover{
+	color: #55ee84;
+	background-color: #e34e;
+}
+.welcome{
+	display: flex;
+	width: 100%;
+	/*height: 100vh;*/
+	justify-content: center;
+	
+}
+.rgpayroll{
+	display: flex;
+	justify-content: center;
+	/*flex-direction: column;*/
+}
+.hhh{
+	width: 50%;
+	background: orange;
+	padding: 5px 5px;
+	align-items: center;
+}
+.rgpayroll .hhh h1{
+	font-family: 'arial', sans-serif;
+	font-size: 40px;
+	margin: 4rem;
+	align-items: center;
+}
+.rgpayroll .hhh h3{
+	margin: 4em;
+	align-items: center;
+
+}
+
+.dashboard{
+	flex: 2;
+	display: flex;
+	margin: 3px;
+}
+.parentfields{
+	flex: 2;
+	display: flex;
+}
+
+.c{
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin-top: 5px;
+}
+.container{
+	width: 23%;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid black;
+}
+
+.num{
+	flex: 1;
+	width: 1vw;
+	height: 6vh;
+	border: 1px solid black;
+
+}
+
+.icon{
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
+	width: 1vw;
+	height: 6vh;
+	border: 1px solid black;
+}
+.num, .icon{
+	margin: 2px;
+}
+
+.bigbox{
+	border: 2px solid black;
+	width: 75vw;
+	height: 20vh;
+	margin-left: 5px;
+	margin-top: 10px;
+}
+.bigbox h2{
+	border-bottom: 2px solid black;
+}
+.allowances{
+	margin-right: 70%;
+}
+
+.post-content div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.post-holder{
+	margin: 1rem 0;
+	width: 55%;
+	background: #fef;
+	border: 1px solid rgba(0,0,0,0.4);
+	display: flex;
+	padding: 6px;
+	/*position: absolute;*/
+	/*height: 100vh;*/
+	margin-bottom: 10%;
+
+}
+.table-control{
+	/*position: absolute;*/
+	/*top: 100px;*/
+	left: 20px;
+	width: 85%;
+	/*height: 100vh;*/
+	/*background: blue;*/
+	margin-bottom: 10px;
+	align-items: center;
+	justify-content: center;
+	margin-left: calc(70% - 60%);
+	margin-bottom: 2%;
+	margin-top: 2%;
+}
+
+.page-content{
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+.border-line{
+	border-bottom: 1px solid black;
+	width: 102%;
+}
+.tweet{
+	display: flex;
+	align-items: flex-start;
+}
+
+.job{
+	margin: 10px;
+}
+.Account{
+	margin-right: 53%;
+}
+.createDept{
+	border: 1px solid black;
+	width: 50%;
+	background-color: blue;
+	padding: 10px;
+	margin-left: 10em;
+	margin-top: 5em;
+}
+
+.createDept div{
+	/*display: flex;*/
+	padding: 10px;
+}
+
+.createDept label{
+	flex: 1;
+}
+
+.createDept input{
+	flex: 3;
+}
+
+input{
+	width: 90%;
+}
+.actions{
+	display: flex;
+	padding: 0;
+}
+.actions ul li{
+	display: inline;
+	list-style: none;
+	margin-right: 30px;
+}
+.actions ul{
+	align-items: center;
+	margin-left: 10%;
+}
+.dailyAtt{
+	border: 1px solid black;
+	width: 50%;
+	background-color: #feef;
+	padding: 2px 2px;
+	margin-left: 0em;
+	margin-top: 5em;
+}
+h3{
+	border-bottom: 1px solid gold;
+	margin-top: 0em;
+}
+.flexit{
+	display: flex;
+	align-items: flex-start;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	flex-direction: column;
+}
+.columnit1{
+	flex: 4;
+	padding: 1px;
+}
+.extension{
+	border: 1px solid black;
+	width: 111%;
+	background-color: #feef;
+	padding: 1px 1px;
+	margin-left: 0em;
+	margin-top: 2em;
+	align-items: center;	
+}
+.gg{
+	width: 100%;
+	text-align: center;
+}
+.button_att{
+	border: 5px 4px;
+	padding: 5px 13px;
+	border-radius: 10px;
+	cursor: pointer;
+	background: orange;
+	transition: .3s ease-in-out;
+}
+.button_att:hover{
+	color: #55ee84;
+	background-color: #e34e;
+}
+.columnit1{
+	margin-top: 10px;
+	flex: 4;
+	padding: 4px;
+}
+.columnit2{
+	margin-top: 10px;
+	flex: 2;
+	padding: 4px;
+}
+.adjustparent{
+	/*display: flex;
+	align-items: flex-start;*/	
+}
+.showReport{
+	display: flex;
+	justify-content: space-around;
+}
+.Month{
+	margin-bottom: 5px;
+}
+.extensionattReport{
+	border: 1px solid black;
+	width: 50%;
+	background-color: #ccc;
+	padding: 2px 2px;
+	margin-left: 0em;
+	margin-top: 2em;
+}
+.flex{
+	display: flex;
+	align-items: flex-start;
+}
+.update_leave_admin{
+	border: 1px solid black;
+	width: 50%;
+	background-color: blue;
+	padding: 10px;
+	margin-left: 10em;
+	margin-top: 5em;
+}
+
+.update_leave_admin div{
+	/*display: flex;*/
+	padding: 10px;
+}
+
+
+
+/*.control2{
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+
+
+.gggg{
+	position: absolute;
+	top: 100px;
+	left: 50px;
+	width: 45%;
+	height: 100vh;
+	background: blue;
+}
+/*.post-content div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+/*.hhh{
+	width: 60%;
+	border: 1px solid black;
+	text-align: left;
+	padding: 0px 0px;
+	top: 0;
+}
+/*.post-content div:last-child{
+	align-items: center;
+}*/
+/*.post-content input, .post-content select, .post-content textarea{
+	width: 35vw;
+}*/
+/*.post-content button{
+	border: 0;
+	padding: 5px 13px;
+	border-radius: 10px;
+	cursor: pointer;
+	background: orange;
+	transition: .3s ease-in-out;
+	width: 100px;
+}*/

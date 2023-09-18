@@ -1,0 +1,118 @@
+<?php
+
+function loginConfig($a, $b){
+	if(strlen($a) <= 3 && !is_numeric($b)){
+			return false;
+		}
+		else{
+			return true;
+		}
+
+}
+
+function checkEmail($a){
+	if(!filter_var($a, FILTER_VALIDATE_EMAIL)){
+		return false;
+	}else{
+		return true;
+	}
+}
+
+function checkPassword($a, $b){
+	if($a !== $b){
+		return false;
+	}else{
+		return true;
+	}
+}
+?>
+
+
+
+<table class="gg" border="1" cellpadding="0px">
+					<thead>
+						<tr>
+							<th>Serial</th>
+							<th>Employee Name/Surname</th>
+							<th>1st</th>
+							<th>2nd</th>
+							<th>3rd</th>
+							<th>4th</th>
+							<th>5th</th>
+							<th>6th</th>
+							<th>7th</th>
+							<th>8th</th>
+							<th>9th</th>
+							<th>10th</th>
+							<th>11th</th>
+							<th>12th</th>
+							<th>13th</th>
+							<th>14th</th>
+							<th>15th</th>
+							<th>16th</th>
+							<th>17th</th>
+							<th>18th</th>
+							<th>19th</th>
+							<th>20th</th>
+							<th>21st</th>
+							<th>22nd</th>
+							<th>23rd</th>
+							<th>24th</th>
+							<th>25th</th>
+							<th>26th</th>
+							<th>27th</th>
+							<th>28th</th>
+							<th>29th</th>
+							<th>30th</th>
+							<th>31st</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="text" name="" placeholder="Serial Number"></td>
+							<td><input type="text" name="" placeholder="Enter Employee Name/Surname"></td>
+							<td><input type="text" name="" placeholder="Comment"></td>
+							<td><input type="text" name="" placeholder="Comment"></td>
+							<td><input type="text" name="" placeholder="Comment"></td>
+							<td><input type="text" name="" placeholder="Comment"></td>
+							<td><input type="text" name="" placeholder="Comment"></td>
+							<td><input type="text" name="" placeholder="Saturday"></td>
+							<td><input type="text" name="" placeholder="Sunday"></td>
+							<td><input type="text" name="" placeholder="Comment"></td>
+							<td><input type="text" name="" placeholder="Comment"></td>
+							<td><input type="text" name="" placeholder="Comment"></td>
+							<td><input type="text" name="" placeholder="Comment"></td>
+							<td><input type="text" name="" placeholder="Comment"></td>
+							<td><input type="text" name="" placeholder="Saturday"></td>
+							<td><input type="text" name="" placeholder="Sunday"></td>
+							<td><input type="text" name="" placeholder="Comment"></td>
+							<td><input type="text" name="" placeholder="Comment"></td>
+							<td><input type="text" name="" placeholder="Comment"></td>
+							<td><input type="text" name="" placeholder="Comment"></td>
+							<td><input type="text" name="" placeholder="Comment"></td>
+							<td><input type="text" name="" placeholder="Saturday"></td>
+							<td><input type="text" name="" placeholder="Sunday></td>
+							<td><input type="text" name="" placeholder="Comment"></td>
+							<td><input type="text" name="" placeholder="Comment"></td>
+							<td><input type="text" name="" placeholder="Comment"></td>
+							<td><input type="text" name="" placeholder="Comment"></td>
+							<td><input type="text" name="" placeholder="Comment"></td>
+							<td><input type="text" name="" placeholder="Saturday"></td>
+							<td><input type="text" name="" placeholder="Sunday"></td>
+							<td><input type="text" name="" placeholder="Comment"></td>
+							<td><input type="text" name="" placeholder="Comment"></td>
+							<td><input type="text" name="" placeholder="Comment"></td>
+							<td><input type="text" name="" placeholder="Comment"></td>
+
+						</tr>
+					</tbody>
+				</table>
+
+
+
+
+
+
+
+
+https://alx-intranet.hbtn.io/upcoming

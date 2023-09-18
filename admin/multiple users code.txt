@@ -1,0 +1,190 @@
+
+Funda of Web IT
+How to make Login System with Session in PHP MySQL
+Login System with Session in PHP MySQL
+
+
+In this tutorial, you will be learning how to make a login system in php with session. Where this is used to provide the authentication for our web pages. We are going to Bootstrap 5 to design the User Interface.
+
+This login form works based on session. The Script executes on the submit button, while it checks for email id and password and sets the SESSION on your browser as per your logged in credentials. When you close the browser, it destroy your Logged In Session.
+
+
+Step 1: Create a file login.php and design the Login Form using Bootstrap 5 as follows:
+<?php session_start(); ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login System in PHP MySQL</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+   
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+
+                <?php
+                    // Your message code
+                    if(isset($_SESSION['message']))
+                    {
+                        echo '<h4 class="alert alert-warning">'.$_SESSION['message'].'</h4>';
+                        unset($_SESSION['message']);
+                    } // Your message code
+                ?>
+
+                <div class="card shadow">
+                    <div class="card-header text-center">
+                        <h4>Login System in PHP MySQL</h4>
+                    </div>
+                    <div class="card-body">
+
+                        <form action="login-code.php" method="POST">
+
+                            <div class="mb-3">
+                                <label>Email ID</label>
+                                <input type="text" name="email" placeholder="Enter Email ID">
+                            </div>
+                            <div class="mb-3">
+                                <label>Password</label>
+                                <input type="password" name="password" placeholder="Enter Password">
+                            </div>
+                            <div class="mb-3">
+                                <button type="submit" name="login_button" class="btn btn-primary">Login</button>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+Step 2: Create Database Connection, in dbconfig.php file:
+<?php
+    $host = "localhost";
+    $username = "your_username";
+    $password = "your_password";
+    $database = "your_database_name";
+
+    // Create DB Connection
+    $conn = mysqli_connect($host, $username, $password, $database);
+
+    // Check connection
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+?>
+
+Step 3: Create login-code.php file, where we work on login system functionality with SESSION and set the session for authentication (Keep Logged In with Session) & save user details in session. 
+<?php
+session_start();
+include('dbconfig.php');
+
+if(isset($_POST['login_button']))
+{
+    $email = mysqli_real_escape_string($con, $_POST['email']);
+    $password = mysqli_real_escape_string($con, $_POST['password']);
+
+    $query = "SELECT * FROM users where email='$email' and password='$password' LIMIT 1";
+    $query_run = mysqli_query($con, $query);
+
+    if(mysqli_num_rows($query_run) > 0)
+    {
+        $row = mysqli_fetch_array($query_run);
+
+        // Authenticating Logged In User
+        $_SESSION['authentication'] = true;
+
+        // Storing Authenticated User data in Session
+        $_SESSION['auth_user'] = [
+            'user_id'=>$row['id'],
+            'user_fullname'=>$row['fullname'],
+            'user_email'=>$row['email'],
+        ];
+
+        $_SESSION['message'] = "You are Logged In Successfully"; //message to show
+        header("Location: index.php");
+        exit(0);
+    }
+    else
+    {
+        $_SESSION['message'] = "Invalid Email or Password"; //message to show
+        header("Location: login.php");
+        exit(0);
+    }
+}
+?>
+
+Step 4: Create index.php file as home page of your website, where we will fetch the Logged In User details from stored SESSIOIN data. and also a Logout Button.
+<?php session_start(); ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+   
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+
+                <?php
+                    // Your message code
+                    if(isset($_SESSION['message']))
+                    {
+                        echo '<h4 class="alert alert-warning">'.$_SESSION['message'].'</h4>';
+                        unset($_SESSION['message']);
+                    } // Your message code
+                ?>
+
+                <h4>Welcome to Home Page</h4>
+
+                <?php
+                // Checking is User Logged In
+                if(isset($_SESSION['authentication']))
+                {
+                    ?>
+                        <h4>User ID: <?= $_SESSION['auth_user']['user_id']; ?></h4>
+                        <h4>User Full Name: <?= $_SESSION['auth_user']['user_fullname']; ?></h4>
+                        <h4>User Email Id: <?= $_SESSION['auth_user']['user_email']; ?></h4>
+                    <?php
+                }
+                ?>
+
+                <?php
+                    if(!isset($_SESSION['authentication']))
+                    {
+                        ?>
+                        <a href="logout.php" class="btn btn-danger mt-3">Logout</a>
+                        <?php
+                    }
+                ?>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+Step 5: Create logout.php file and unset the SESSION in php. (Logout Code)
+<?php
+    session_start();
+    unset($_SESSION["authentication"]);
+    unset($_SESSION["auth_user"]);
+
+    $_SESSION['message'] = "Logged Out Successfully";
+    header("Location: index.php");
+    exit(0);
+?>
